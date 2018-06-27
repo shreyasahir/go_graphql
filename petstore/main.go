@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"github.com/graphql-go/graphql"
 	"github.com/graphql-go/handler"
+	"go_graphql/petstore/mutations"
 	"go_graphql/petstore/queries"
 	"log"
 	"net/http"
@@ -22,10 +23,10 @@ func main() {
 			Name:   "RootQuery",
 			Fields: queries.GetRootFields(),
 		}),
-		// Mutation: graphql.NewObject(graphql.ObjectConfig{
-		// 	Name:   "RootMutation",
-		// 	Fields: GetRootFields(),
-		// }),
+		Mutation: graphql.NewObject(graphql.ObjectConfig{
+			Name:   "RootMutation",
+			Fields: mutations.GetRootFields(),
+		}),
 	}
 	schema, err := graphql.NewSchema(schemaConfig)
 	if err != nil {

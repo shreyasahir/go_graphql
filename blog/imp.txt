@@ -1,4 +1,4 @@
-ahirs-a01:blog ahirs$ curl -X POST -H 'Content-Type: application/json' -d '{"query": "mutation { createUser(firstname: \"John\", lastname: \"Snow\") { id,firstname,lastname } }"}'  http://localhost:8000
+curl -X POST -H 'Content-Type: application/json' -d '{"query": "mutation { createUser(firstname: \"John\", lastname: \"Snow\") { id,firstname,lastname } }"}'  http://localhost:8000
 
 
 ahirs-a01:blog ahirs$ curl -X POST -H 'Content-Type: application/json' -d '{"query": "query { users { id,firstname,lastname,roles{name} } }"}'  http://localhost:8000
